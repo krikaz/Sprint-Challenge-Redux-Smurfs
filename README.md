@@ -23,8 +23,19 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+reducers are functions associated with a state in our app.
+actions can be combined to modify our states
+store is a place where all our components can access all states
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state affects our whole app and can be access by our other components
+Component state affects only the component wher it is written
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+`redux-thunk` is a middleware. It allows us to use redux asynchronously. We can defer some action only until one is successfuly executed.
 
 ## Project Set Up
 
@@ -63,10 +74,10 @@ Your finished project must include all of the following requirements:
 
 ```js
 return dispatch => {
-  dispatch({ type: FOO_ACTION_TYPE });
-  promise.then(({ data }) => {
-    dispatch({ type: ANOTHER_ACTION_TYPE, payload: data });
-  });
+	dispatch({ type: FOO_ACTION_TYPE });
+	promise.then(({ data }) => {
+		dispatch({ type: ANOTHER_ACTION_TYPE, payload: data });
+	});
 };
 ```
 
@@ -79,12 +90,12 @@ return dispatch => {
 
 ```js
 [
-  {
-    name: 'Brainey',
-    age: 200,
-    height: '5cm',
-    id: 0
-  }
+	{
+		name: 'Brainey',
+		age: 200,
+		height: '5cm',
+		id: 0,
+	},
 ];
 ```
 
@@ -112,18 +123,18 @@ Example of object created in Smurf DB:
 
 ```js
 [
-  {
-    name: 'Brainey',
-    age: 200,
-    height: '5cm',
-    id: 0
-  },
-  {
-    name: 'Sleepy',
-    age: 200,
-    height: '5cm',
-    id: 1
-  }
+	{
+		name: 'Brainey',
+		age: 200,
+		height: '5cm',
+		id: 0,
+	},
+	{
+		name: 'Sleepy',
+		age: 200,
+		height: '5cm',
+		id: 1,
+	},
 ];
 ```
 
@@ -172,11 +183,11 @@ Example:
 
 ```js
 output: [
-  {
-    name: 'Sleepy',
-    age: 200,
-    height: '5cm',
-    id: 1
-  }
+	{
+		name: 'Sleepy',
+		age: 200,
+		height: '5cm',
+		id: 1,
+	},
 ];
 ```
