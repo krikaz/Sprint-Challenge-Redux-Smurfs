@@ -9,19 +9,21 @@ import './App.css';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import Smurf from './Smurf';
+import SmurfForm from './SmurfForm';
 
 class App extends Component {
-  componentDidMount() {
-    // console.log(this.props.smurfs);
-    // this.props.fetchSmurfs();
-  }
+	componentDidMount() {
+		// console.log(this.props.smurfs);
+		// this.props.fetchSmurfs();
+	}
 
 	render() {
 		return (
 			<div className="App">
 				<h1>Smurfs Village</h1>
 				<Smurf smurfs={this.props.smurfs} />
-        <button onClick={this.props.fetchSmurfs}>Fetch</button>
+				<button onClick={this.props.fetchSmurfs}>Fetch</button>
+				<SmurfForm props={this.props} />
 			</div>
 		);
 	}
