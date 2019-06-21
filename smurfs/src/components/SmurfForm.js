@@ -20,11 +20,12 @@ export default class SmurfForm extends React.Component {
 	}
 
 	deleteSmurfOnClick() {
+		console.log(idRef.current.value);
 		this.props.props.deleteSmurf(idRef.current.value);
 	}
 
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		return (
 			<div>
 				<input type="text" ref={idRef} placeholder="id" />

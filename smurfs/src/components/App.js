@@ -23,8 +23,8 @@ class App extends Component {
 				<h1>Smurfs Village</h1>
 				<Smurf smurfs={this.props.smurfs} />
 				<button onClick={this.props.fetchSmurfs}>Fetch</button>
-				{/* <SmurfForm props={this.props} /> */}
 				<SmurfForm props={this.props} />
+				{/* <SmurfForm /> */}
 			</div>
 		);
 	}
