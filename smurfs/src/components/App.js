@@ -6,8 +6,8 @@ import './App.css';
  Just remember, `how do I `connect` my components to redux?`
  `How do I ensure that my component links the state to props?`
  */
-import * as actions from './actions';
-import connect from 'react-redux';
+import * as actions from '../actions';
+import { connect } from 'react-redux';
 
 class App extends Component {
 	render() {
