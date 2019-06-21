@@ -23,13 +23,14 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
 	return {
-		smurfs: state.rootReducer.smurfs,
-		fetchingSmurfs: state.rootReducer.fetchingSmurfs,
-		addingSmurf: state.rootReducer.addingSmurf,
-		updatingSmurf: state.rootReducer.updatingSmurf,
-		deletingSmurf: state.rootReducer.deletingSmurf,
-		error: state.rootReducer.error,
+		smurfs: state.smurfs,
+		fetchingSmurfs: state.fetchingSmurfs,
+		addingSmurf: state.addingSmurf,
+		updatingSmurf: state.updatingSmurf,
+		deletingSmurf: state.deletingSmurf,
+		error: state.error,
 	};
 }
 
