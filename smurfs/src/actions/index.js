@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 /* 
   Action Types Go Here!
   Be sure to export each action type so you can pull it into your reducer
@@ -20,3 +22,31 @@ export const ADDING_SMURF_FAILURE = 'ADDING_SMURF_FAILURE';
    U - updateSmurf
    D - deleteSmurf
 */
+
+export const fetchSmurfs = () => {
+	return function(dispatch) {
+		dispatch({ type: FETCHING_SMURFS });
+		axios
+			.get('http://localhost:3333/smurfs')
+			.then(res => {
+				dispatch({ type: FETCHING_SMURFS_SUCCESS, payload: res.data });
+			})
+			.catch(error => {
+				dispatch({ type: FETCHING_SMURFS_FAILURE, payload: error.message });
+			});
+	};
+};
+
+export const addSmurf = ({ name, age, height }) => {
+	return function(dispatch) {
+		dispatch({ type: ADDING_SMURF });
+		axios
+			.post('http://localhost:3333/smurfs', { name, age, height })
+			.then(res => {
+				dispatch({ type: ADDING_SMURF_SUCCESS, payload: res.data });
+			})
+			.catch(error => {
+				dispatch({ type: ADDING_SMURF_FAILURE, payload: error.message });
+			});
+	};
+};
