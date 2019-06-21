@@ -57,11 +57,11 @@ export const addSmurf = ({ name, age, height }) => {
 	};
 };
 
-export const updateSmurf = id => {
+export const updateSmurf = (id, { name, age, height }) => {
 	return function(dispatch) {
 		dispatch({ type: UPDATING_SMURF });
 		axios
-			.put('http://localhost:3333/smurfs/' + id)
+			.put('http://localhost:3333/smurfs/' + id, { name, age, height })
 			.then(res => {
 				dispatch({ type: UPDATING_SMURF_SUCCESS, payload: res.data });
 			})

@@ -16,7 +16,12 @@ export default class SmurfForm extends React.Component {
 	}
 
 	updateSmurfOnClick() {
-		this.props.props.updateSmurf(idRef.current.value);
+		const newSmurf = {
+			name: nameRef.current.value,
+			age: ageRef.current.value,
+			height: heightRef.current.value,
+		};
+		this.props.props.updateSmurf(idRef.current.value, newSmurf);
 	}
 
 	deleteSmurfOnClick() {
