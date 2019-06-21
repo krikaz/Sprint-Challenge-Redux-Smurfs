@@ -68,6 +68,40 @@ export const rootReducer = (state = initialState, action) => {
 				addingSmurf: false,
 				error: action.payload,
 			};
+		case types.UPDATING_SMURF:
+			return {
+				...state,
+				updatingSmurf: true,
+			};
+		case types.UPDATING_SMURF_SUCCESS:
+			return {
+				...state,
+				updatingSmurf: false,
+				smurfs: action.payload,
+			};
+		case types.UPDATING_SMURF_FAILURE:
+			return {
+				...state,
+				updatingSmurf: false,
+				error: action.payload,
+			};
+		case types.DELETING_SMURF:
+			return {
+				...state,
+				deletingSmurf: true,
+			};
+		case types.DELETING_SMURF_SUCCESS:
+			return {
+				...state,
+				deletingSmurf: false,
+				smurfs: action.payload,
+			};
+		case types.DELETING_SMURF_FAILURE:
+			return {
+				...state,
+				deletingSmurf: false,
+				error: action.payload,
+			};
 		default:
 			return state;
 	}
