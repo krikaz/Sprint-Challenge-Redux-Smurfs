@@ -8,22 +8,27 @@ import './App.css';
  */
 import * as actions from '../actions';
 import { connect } from 'react-redux';
+import Smurf from './Smurf';
 
 class App extends Component {
+  componentDidMount() {
+    // console.log(this.props.smurfs);
+    // this.props.fetchSmurfs();
+  }
+
 	render() {
 		return (
 			<div className="App">
-				<h1>SMURFS! 2.0 W/ Redux</h1>
-				<div>Welcome to your Redux version of Smurfs!</div>
-				<div>Start inside of your `src/index.js` file!</div>
-				<div>Have fun!</div>
+				<h1>Smurfs Village</h1>
+				<Smurf smurfs={this.props.smurfs} />
+        <button onClick={this.props.fetchSmurfs}>Fetch</button>
 			</div>
 		);
 	}
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+	// console.log(state);
 	return {
 		smurfs: state.smurfs,
 		fetchingSmurfs: state.fetchingSmurfs,

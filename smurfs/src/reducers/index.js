@@ -33,7 +33,7 @@ const initialState = {
 */
 
 export const rootReducer = (state = initialState, action) => {
-	switch (action.types) {
+	switch (action.type) {
 		case types.FETCHING_SMURFS:
 			return {
 				...state,
